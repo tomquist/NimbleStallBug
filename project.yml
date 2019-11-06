@@ -1,0 +1,24 @@
+name: NimbleStall
+attributes:
+  ORGANIZATIONNAME: Tom Quist
+options:
+  bundleIdPrefix: com.example.nimblestall
+  deploymentTarget:
+    iOS: "11.0"
+    macOS: "10.13"
+settings:
+  base:
+    SWIFT_VERSION: 5.0
+packages:
+  Nimble:
+    url: https://github.com/Quick/Nimble.git
+    from: 8.0.0
+targets:
+  NimbleStallSPM:
+    type: bundle.unit-test
+    platform: iOS
+    info:
+      path: Tests/Info.plist
+    sources: [Tests]
+    dependencies:
+    - package: Nimble
